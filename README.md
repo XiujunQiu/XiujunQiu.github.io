@@ -154,7 +154,7 @@ plt.show()
 
 
 ## Data Cleaning
-- merge taxi zone information (match the information with ‘PULocationID’ and ‘DOLocationID’); drop 'hvfhs_license_num', 'dispatching_base_num' and extra LocationID column ('LocationID_pulocation', 'LocationID_dolocation_lookup')
+- Merge taxi zone information (match the information with ‘PULocationID’ and ‘DOLocationID’); drop 'hvfhs_license_num', 'dispatching_base_num' and extra LocationID column ('LocationID_pulocation', 'LocationID_dolocation_lookup')
 
 ```ruby
 # Import necessary libraries
