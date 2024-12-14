@@ -1,6 +1,4 @@
-# Xiujun Qiu
-
-## Project
+# Project
 Predicting Ride Tips with NYC TLC Data
 
 ### Data Processing Infrastructure
