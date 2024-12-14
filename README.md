@@ -15,10 +15,15 @@
 ## Data Acquistion
 - I first created a bucket. In the bucket, I created folders for landing, cleaned, trusted, code and models
 Created a new VM instance
-Opened the terminal on GCP VM, I first created a shell script for downloading data:
-touch download_tlc_data.sh 
+Opened the terminal on GCP VM,
+I first created a shell script for downloading data:
+```ruby
+touch download_tlc_data.sh
+```
 Open the script: 
+```ruby
 nano download_tlc_data.sh 
+```
 Typed in my script code as below (copy the links for parquet files from the TLC website and save them with appropriate names):
 
 ```ruby
