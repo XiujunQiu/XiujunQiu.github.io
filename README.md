@@ -1,5 +1,5 @@
 # Project
-# Predicting Ride Tips with NYC TLC Data
+## Predicting Ride Tips with NYC TLC Data
 
 ### Data Processing Infrastructure
 - Cloud Platform: The entire data processing pipeline is built and executed on Google Cloud Platform (GCP), leveraging its scalability and efficiency.
