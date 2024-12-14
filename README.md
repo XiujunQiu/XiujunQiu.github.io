@@ -3,6 +3,11 @@
 ## Project
 NYC Taxi Tip Prediction
 
+## Data Processing Infrastructure
+- Cloud Platform: The entire data processing pipeline is built and executed on Google Cloud Platform (GCP), leveraging its scalability and efficiency.
+- Virtual Machine (VM): A Google Cloud Virtual Machine (VM) environment is used to run all data processing tasks, ensuring flexibility and computational power for handling large datasets.
+- Dataproc: Google Cloud Dataproc was utilized for distributed data processing and scalable analysis. Dataproc provides a managed Apache Hadoop and Apache Spark service, enabling efficient TLC trip data batch processing.
+
 ### Description
 - This project analyzed tipping behavior in NYC for-hire vehicles using high-volume trip record data from the NYC Taxi & Limousine Commission (TLC). The dataset covers trips from January 2022 to August 2023, including such as pickup/drop-off times, locations, distances, and fares.
 
@@ -10,7 +15,6 @@ NYC Taxi Tip Prediction
 - By analyzing key trip characteristics, this project aims to uncover patterns in tipping behavior and predict both the likelihood and amount of tips. These insights can help drivers identify factors influencing tips, enabling them to optimize their earnings by focusing on higher-tipping routes, times, or conditions. Additionally, companies can leverage these findings to enhance customer service, improve driver incentive programs, and refine operational strategies, ultimately boosting both driver satisfaction and customer loyalty.
 
 ## Data Acquistion
-
 - I first created a bucket. In the bucket, I created folders for landing, cleaned, trusted, code and models
 Created a new VM instance
 Opened the terminal on GCP VM, I first created a shell script for downloading data:
@@ -61,8 +65,8 @@ chmod +x download_tlc_data.sh
 ./download_tlc_data.sh
 ```
 
-## EDA
 
+## EDA
 ```ruby
 !pip install pyarrow fastparquet
 
@@ -145,8 +149,8 @@ plt.xlabel('driver pay')
 plt.show()
 ```
 
-## Data Cleaning
 
+## Data Cleaning
 - merge taxi zone information (match the information with ‘PULocationID’ and ‘DOLocationID’); drop 'hvfhs_license_num', 'dispatching_base_num' and extra LocationID column ('LocationID_pulocation', 'LocationID_dolocation_lookup')
 
 ```ruby
@@ -244,8 +248,8 @@ for file_path in files_to_clean:
     clean_data(file_path)
 ```
 
-## Feature Engineering and Modeling
 
+## Feature Engineering and Modeling
 ```ruby
 from pyspark.sql.functions import *
 from pyspark.ml.feature import StringIndexer, OneHotEncoder, VectorAssembler
@@ -397,8 +401,8 @@ processed_data.write.mode("overwrite").parquet(data_save_path)
 print(f"Processed data saved to {data_save_path}")
 ```
 
-## Visualization
 
+## Visualization
 ```ruby
 import io
 import pandas as pd
@@ -586,6 +590,7 @@ print("Visualization saved to Google Cloud Storage as 'correlation_matrix.png'")
 # Show the plot
 plt.show()
 ```
+
 
 ## Conclusion
 - The model's performance is limited, as reflected by the low R² (0.0536) and RMSE (1.5324), suggesting that the features used do not adequately capture the tipping behavior. One potential issue is that the data is dominated by zero-dollar tips, making it difficult for the model to make meaningful predictions for non-zero tips. This imbalance may affect the model's ability to predict higher tips accurately.
