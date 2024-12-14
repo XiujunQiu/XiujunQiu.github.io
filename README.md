@@ -1,9 +1,9 @@
 # Xiujun Qiu
 
 ## Project
-NYC Taxi Tip Prediction
+Predicting Ride Tips with NYC TLC Data
 
-## Data Processing Infrastructure
+### Data Processing Infrastructure
 - Cloud Platform: The entire data processing pipeline is built and executed on Google Cloud Platform (GCP), leveraging its scalability and efficiency.
 - Virtual Machine (VM): A Google Cloud Virtual Machine (VM) environment is used to run all data processing tasks, ensuring flexibility and computational power for handling large datasets.
 - Dataproc: Google Cloud Dataproc was utilized for distributed data processing and scalable analysis. Dataproc provides a managed Apache Hadoop and Apache Spark service, enabling efficient TLC trip data batch processing.
